@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formulaire pour les voitures : </title>
+    <a href="/myfirstapp/index/"> Index</a>
+    <a href="/myfirstapp/formulaire2/"> Formulaire2</a>
+</head>
+
+<body>
+        <h2> Saisie d'une nouvelle voiture :</h2>
+
+        <form method='post' action="/myfirstapp/recup1/" >
+        {% csrf_token %}
+        {{form.as_ul }}
+        <input type="submit" value="envoyer"/>
+        </form>
+</body>
+
+</html>
