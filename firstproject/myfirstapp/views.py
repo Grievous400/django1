@@ -13,6 +13,15 @@ def formulaire1(request):
         form = voitureForm()
         return render(request, "myfirstapp/formulaire1.html", {"form": form})
 
+def recup1(request):
+    vform=voitureForm(request.POST)
+    if vform.is_valid():
+
+        return render(request, "myfirstapp/recup1.html")
+    else:
+        return render(request, "myfirstapp/formulaire1.html")
+
+
 def formulaire2(request):
     if request.method =="POST":
         form = marqueForm(request)
@@ -20,13 +29,6 @@ def formulaire2(request):
     else:
         form = marqueForm()
         return render(request,"myfirstapp/formulaire2.html", {"form": form})
-
-def recup1(request):
-    vform=voitureForm(request.POST)
-    if vform.is_valid():
-        return render(request, "myfirstapp/recup1.html")
-    else:
-        return render(request, "myfirstapp/formulaire1.html")
 
 def recup2(request):
     mform = marqueForm(request.POST)
