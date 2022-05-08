@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>formulaire pour les livres </title>
-    <a href="/myfirstapp/index/"> Index</a>
+    <a href="/myfirstapp/"> Index</a>
     <a href="/myfirstapp/formulaire1/"> Formulaire1</a>
 
 <body>
 
        <h2> Saisie d'une nouvelle marque :</h2>
-
-        <form method='post' action="/myfirstapp/recup2/" >
-                {% csrf_token %}
-         {{form.as_ul }}
+       {% if id != '' %}
+            <form method='post' action="/myfirstapp/updatetraitement2/{{id}}/">
+            {% else %}
+                <form method='post' action="/myfirstapp/recup2/" >
+        {% endif %}
+        {% csrf_token %}
+        {{form.as_ul }}
         <input type="submit" value="envoyer"/>
-        </form>
+
+
 </body>
 </html>

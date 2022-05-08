@@ -11,6 +11,16 @@
 </head>
 <body>
     <h1> Claudel Louis : Bienvenue sur mon site django : </h1>
+<ol> Liste de toute les voitures :
+    {% for v in liste %}
+        <li>{{v}} <a href="/myfirstapp/affiche/{{v.id}}/"> affiche</a><a href="/myfirstapp/update/{{v.id}}/"> update</a><a href="/myfirstapp/delete1/{{v.id}}/"> delete </a></li>
+    {% endfor%}
+</ol>
+<ol> Liste de toute les marques :
+    {% for m in liste2 %}
+    <li>{{m}}<a href="/myfirstapp/affiche2/{{m.id}}/"> affiche</a> <a href="/myfirstapp/update2/{{m.id}}/">uptade </a><a href="/myfirstapp/delete2/{{m.id}}/"> delete </a> </li>
+    {% endfor%}
+</ol>
 
 
 </body>

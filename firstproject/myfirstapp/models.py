@@ -9,6 +9,8 @@ class marque(models.Model):
     def __str__(self):
         chaine = f"{self.nom_marque}␣a été crée par␣{self.createur}␣en  {self.date_creation}"
         return chaine
+    def dico(self):
+        return {"nom_marque":self.nom_marque,"createur":self.createur,"date_creation":self.date_creation}
 
 class voiture(models.Model):
     nom = models.CharField(max_length=100)
@@ -19,5 +21,8 @@ class voiture(models.Model):
 
     def __str__(self):
 
-        chaine2 = f"{self.nom} est le modèle {self.modele} construit en {self.date_constrution}.c'est caractéritique sont {self.caracteristique}"
+        chaine2 = f"{self.nom} est le modèle {self.modele} construit en {self.date_constrution}.ces caractéritique sont {self.caracteristique}"
         return chaine2
+
+    def dico(self):
+        return {"nom":self.nom,"modele":self.modele,"marque_voiture":self.marque_voiture,"date_constrution":self.date_constrution,"caracteristique":self.caracteristique}
