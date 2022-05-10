@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>formulaire pour les voitures : </title>
-    <a href="/myfirstapp/"> Index</a>
-    <a href="/myfirstapp/formulaire2/"> Formulaire2</a>
-</head>
+{% extends "myfirstapp/main.html" %}
 
-<body>
-        <h2> Saisie d'une nouvelle voiture :</h2>
-        {% if id != '' %}
-        <form method='post' action="/myfirstapp/updatetraitement/{{id}}/">
+{%block title %} Formulaire pour ajouter des voitures : {% endblock %}
+
+{% block content %}
+        <h2> Saisie d'une nouvelle voiture (formulaire1):</h2>
+        {% if id != None %}
+            <form method='post' action="/myfirstapp/updatetraitement/{{id}}/">
         {% else %}
             <form method='post' action="/myfirstapp/recup1/" >
         {% endif %}
 
-
-
-
-
         {% csrf_token %}
         {{form.as_ul }}
         <input type="submit" value="envoyer"/>
-
-</body>
-
-</html>
+            </form>
+            </form>
+{% endblock %}

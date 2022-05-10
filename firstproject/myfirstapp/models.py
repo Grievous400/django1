@@ -7,7 +7,7 @@ class marque(models.Model):
     date_creation = models.DateField(blank=True, null = True)
 
     def __str__(self):
-        chaine = f"{self.nom_marque}␣a été crée par␣{self.createur}␣en  {self.date_creation}"
+        chaine = f"{self.nom_marque} a été crée par {self.createur} en  {self.date_creation}"
         return chaine
     def dico(self):
         return {"nom_marque":self.nom_marque,"createur":self.createur,"date_creation":self.date_creation}

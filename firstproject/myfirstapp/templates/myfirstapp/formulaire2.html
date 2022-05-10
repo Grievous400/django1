@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>formulaire pour les livres </title>
-    <a href="/myfirstapp/"> Index</a>
-    <a href="/myfirstapp/formulaire1/"> Formulaire1</a>
+{% extends "myfirstapp/main.html" %}
 
+{%block title %} Formulaire pour ajouter des voitures : {% endblock %}
+
+{% block content %}
 <body>
 
        <h2> Saisie d'une nouvelle marque :</h2>
-       {% if id != '' %}
+       {% if id != None %}
             <form method='post' action="/myfirstapp/updatetraitement2/{{id}}/">
             {% else %}
                 <form method='post' action="/myfirstapp/recup2/" >
@@ -18,6 +15,8 @@
         {{form.as_ul }}
         <input type="submit" value="envoyer"/>
 
-
+                </form>
+            </form>
 </body>
-</html>
+
+{% endblock %}
