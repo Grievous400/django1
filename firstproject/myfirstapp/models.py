@@ -21,7 +21,7 @@ class voiture(models.Model):
 
     def __str__(self):
 
-        chaine2 = f"{self.nom} est le modèle {self.modele} construit en {self.date_constrution}.ces caractéritique sont {self.caracteristique}"
+        chaine2 = f"{self.nom} est le modèle {self.modele} construit en {self.date_constrution}.Ces caractéritique sont {self.caracteristique}"
         return chaine2
 
     def dico(self):

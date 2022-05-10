@@ -2,6 +2,7 @@ from django.shortcuts import render ,HttpResponseRedirect
 from .forms import marqueForm
 from .forms import voitureForm
 from . import models
+
 # Create your views here.
 def index(request):
     liste=list(models.voiture.objects.all())
@@ -9,7 +10,7 @@ def index(request):
     return render(request, 'myfirstapp/index.html',{"liste":liste,"liste2":liste2})
 
 def formulaire1(request):
-    if request.method =="POST":
+    if request.method == "POST":
         form = voitureForm(request)
         return render(request, "myfirstapp/formulaire1.html", {"form": form})
     else:
@@ -20,7 +21,7 @@ def recup1(request):
     vform=voitureForm(request.POST)
     if vform.is_valid():
         voiture=vform.save()
-        return HttpResponseRedirect("/myfirstapp")
+        return HttpResponseRedirect("/myfirstapp/")
     else:
         return render(request, "myfirstapp/formulaire1.html")
 
@@ -37,22 +38,21 @@ def recup2(request):
     mform = marqueForm(request.POST)
     if mform.is_valid():
         marque = mform.save()
-        return HttpResponseRedirect("myfirstapp")
+        return HttpResponseRedirect("/myfirstapp/")
     else:
         return render(request, "myfirstapp/formulaire2.html")
+
 def affiche(request,id):
     voiture = models.voiture.objects.get(pk= id)
-
     return render(request,"myfirstapp/affiche.html",{"voiture":voiture})
 
 def affiche2(request, id):
     marque = models.marque.objects.get(pk=id)
-
     return render(request, "myfirstapp/affiche2.html", { "marque": marque})
 
 def update(request,id):
-    voiture = models.voiture.objects.get(pk=id)
-    form = voitureForm(voiture.dico())
+    voit = models.voiture.objects.get(pk=id)
+    form = voitureForm(voit.dico())
     return render(request,"myfirstapp/formulaire1.html",{"form":form,"id":id})
 
 
@@ -86,6 +86,7 @@ def delete1(request,id):
     voiture = models.voiture.objects.get(pk=id)
     voiture.delete()
     return HttpResponseRedirect("/myfirstapp")
+
 
 def delete2(request,id):
     marque = models.marque.objects.get(pk=id)

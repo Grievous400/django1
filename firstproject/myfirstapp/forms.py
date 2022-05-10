@@ -9,7 +9,7 @@ class marqueForm(ModelForm):
         labels = {
             'nom_marque' : _('Nom de la marque '),
             'createur' : _('createur ') ,
-            'date_creation' : _('date␣de␣constrution  '),
+            'date_creation' : _('date de constrution  '),
 
         }
 class voitureForm(ModelForm):

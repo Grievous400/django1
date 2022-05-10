@@ -1,13 +1,22 @@
 h1{
-    color: red ;
+    color: #3333CC;
     text-align: center;
+    font-weight : bold;
+    text-decoration : underline;
+}
+h3{
+    color :#3333CC;
+    text-decoration : underline;
 }
 body{
     text-align: center ;
     margin: 0 ;
     padding: 0;
     font-size: 20px;
-    background-image: url("")
+    background-image: url("https://www.bianoti.com/wp-content/uploads/20140924_54228475c2920.jpg") ;
+    color:  #17202a ;
+
+
 
 }
 
@@ -15,6 +24,11 @@ nav {
     border-bottom: 1px solid black;
 
 
+
+}
+
+a{
+    color:      #330099 ;
 }
 
 .menu ol {
@@ -39,14 +53,11 @@ ol{
     box-shadow: 8px 8px 8px black;
 	border-radius: 30px;
 	text-align: center;
-	margin-left: 2.5% ;
-    margin-right:  2.5% ;
+	margin-left: 20% ;
+    margin-right:  20% ;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
-    background-color: # ;
-
     padding: 2.5% ;
-}
-li{
+
 
 }

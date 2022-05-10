@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Voiture : </title>
+{% extends "myfirstapp/main.html" %}
 
-    <a href="/myfirstapp/"> Index</a>
-    <a href="/myfirstapp/formulaire1/"> Formulaire1</a>
-    <a href="/myfirstapp/formulaire2/"> Formulaire2</a>
+{%block title %}  Index  {% endblock %}
 
-</head>
+{% block content %}
+    <h3>Voici la voiture sélectionné :</h3>
   <body>
     {{voiture}}
   </body>
 
-</html>
+
+{% endblock %}
