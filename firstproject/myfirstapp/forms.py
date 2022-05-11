@@ -15,11 +15,11 @@ class marqueForm(ModelForm):
 class voitureForm(ModelForm):
     class Meta:
         model =models.voiture
-        fields =('nom','modele','marque_voiture','date_constrution','caracteristique')
+        fields =('nom','modele','marque','date_constrution','caracteristique')
         labels ={
             'nom': _('Nom de la voiture  '),
             'modele': _('Modèle de la voiture '),
-            'marque_voiture':('Marque de la voiture'),
+            'marque':('Marque de la voiture'),
             'date_constrution' : _('Date de constrution '),
             'caracteristique' : _('Les caractéristiques '),
         }

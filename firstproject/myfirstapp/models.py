@@ -15,7 +15,7 @@ class marque(models.Model):
 class voiture(models.Model):
     nom = models.CharField(max_length=100)
     modele =models.CharField(max_length=100)
-    marque_voiture = models.CharField(max_length=100)
+    marque= models.ForeignKey(marque, null=True, on_delete=models.CASCADE,related_name='marque')
     date_constrution =models.DateField(blank=True, null = True)
     caracteristique =models.CharField(max_length = 100)
 
