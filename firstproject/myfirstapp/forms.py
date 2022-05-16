@@ -5,9 +5,9 @@ from . import models
 class marqueForm(ModelForm):
     class Meta:
         model = models.marque
-        fields = ('nom_marque', 'createur', 'date_creation')
+        fields = ('marque', 'createur', 'date_creation')
         labels = {
-            'nom_marque' : _('Nom de la marque '),
+            'marque' : _('Nom de la marque '),
             'createur' : _('createur ') ,
             'date_creation' : _('date de constrution  '),
 
