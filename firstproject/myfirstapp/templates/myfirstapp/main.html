@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static '/myfirstapp/index.css'%}">
+
+  <title>{% block title %} Bienvenue sur mon site  {% endblock %} </title>
+  </head>
+<body>
+
+<aside id="sidebar">
+{% block sidebar %}
+    <nav class="menu">
+<ul>
+<a href="/myfirstapp/">Index</a><a href="/myfirstapp/formulaire1">Formulaire pour ajouter des voitures:</a>
+  <a href="/myfirstapp/formulaire2">Formulaire pour ajouter des marques :</a>
+</ul>
+    </nav>
+{% endblock %}
+</aside>
+<div id="content">
+{% block content %}
+<h1> bloc principal </h1>
+{% endblock %}
+</div>
+</body>
+
+</html>
